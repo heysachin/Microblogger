@@ -2,6 +2,8 @@
 
 from models.database import Database
 from models.post import Post
+from models.blog import Blog
+
 
 Database.initialize()
 
@@ -12,9 +14,19 @@ Database.initialize()
 #     author='Sachin')
 #
 # post.save_to_mongo()
+# posts = Post.from_blog('1234')
+#
+# for post in posts:
+#     print(post)
 
-posts = Post.from_blog('1234')
+blog = Blog(author="Sachin",
+            title="New Title",
+            description="Sample Description")
 
-for post in posts:
-    print(post)
-    
+blog.new_post()
+
+blog.save_to_mongo()
+
+from_database = Blog.from_mongo(blog.id)
+
+print(blog.get_posts())
