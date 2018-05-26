@@ -1,10 +1,20 @@
-from post import Post
+# Created by Sachin Dev on 26/05/18
 
+from models.database import Database
+from models.post import Post
 
-post = Post()
-post2 = Post()
+Database.initialize()
 
-post2.content="Different Content"
+# post = Post(
+#     blog_id='1234',
+#     title='Another Great Post',
+#     content='This is Sample Content',
+#     author='Sachin')
+#
+# post.save_to_mongo()
 
-print(post.content)
-print(post2.content)
+posts = Post.from_blog('1234')
+
+for post in posts:
+    print(post)
+    

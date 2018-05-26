@@ -1,8 +1,13 @@
+
+
+# Created by Sachin Dev on 26/05/18
+
+
 import pymongo
 
-url = "mongodb://127.0.0.1:27017"
+uri = "mongodb://127.0.0.1:27017"
 
-client = pymongo.MongoClient(url)
+client = pymongo.MongoClient(uri)
 database = client['demo']
 collection = database['demo']
 
