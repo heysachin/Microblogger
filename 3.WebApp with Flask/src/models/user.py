@@ -31,7 +31,7 @@ class User(object):
     def login_valid(email, password):
         user = User.get_by_email(email)
         if user is not None:
-            return user.password
+            return user.password == password
         return False
 
     @classmethod
@@ -54,7 +54,7 @@ class User(object):
         session['email'] = None
 
     def get_blogs(self):
-        return Blog.find_by_author(self._id)
+        return Blog.find_by_author_id(self._id)
 
     def new_blogs(self, title, description):
         blog = Blog(author=self.email,

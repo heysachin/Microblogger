@@ -1,5 +1,5 @@
 # Created by Sachin Dev on 26/05/18
-from models.database import Database
+from database.database import Database
 from models.post import Post
 import uuid
 import datetime

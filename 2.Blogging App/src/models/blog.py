@@ -27,7 +27,7 @@ class Blog(object):
             title = title,
             content = content,
             author = self.author,
-            date=date)
+            created_date=date)
         post.save_to_mongo()
 
     def get_posts(self):
