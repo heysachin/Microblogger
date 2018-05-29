@@ -34,13 +34,13 @@ class Blog(object):
             'author_id': self.author_id,
             'title': self.title,
             'description': self.description,
-            'id': self._id
+            '_id': self._id
         }
 
     @classmethod
     def from_mongo(cls, _id):
         blog_data = Database.find_one(collection='blogs',
-                                      query={'id': id})
+                                      query={'_id': _id})
         return cls(**blog_data)
 
     @classmethod

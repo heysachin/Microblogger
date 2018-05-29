@@ -3,8 +3,13 @@
 
 <div class="container">
     <h2>{{ email }}'s Blogs</h2>
+    <br>
+    <a href="/blogs/new"><button class="btn btn-success">Create New Blog</button></a>
+    <a href="/logout"><button class="btn btn-danger">Logout</button></a>
+    <br>
+    <br>
     {% for blog in blogs %}
-        <h3>{{ blog.title }}</h3>
+    <h3><a href="/posts/{{ blog._id }}"> {{ blog.title }} <a/></h3>
         <p>{{ blog.description }}</p>
         <hr>
     {% endfor %}
