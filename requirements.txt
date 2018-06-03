@@ -1,2 +1,6 @@
-Flask
-pymongo
+requests
+Flask==1.0.2
+pymongo==3.6.1
+beautifulsoup4==4.6.0
+passlib==1.7.1
+requests=2.18.4
